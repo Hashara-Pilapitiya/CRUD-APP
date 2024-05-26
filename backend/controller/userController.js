@@ -2,6 +2,8 @@ const User = require("../model/userModel.js");
 
 //import User from "../model/userModel.js";
 
+
+//create a user
 const create = async (req, res) => {   
     try {
         const newUser = new User(req.body);
@@ -20,3 +22,20 @@ const create = async (req, res) => {
 }
 
 module.exports = { create };
+
+
+//get all users
+const getAll = async (req, res) => {
+    try {
+        const users = await User.find();
+        if (!users || users.length === 0){
+            return res.status(404).json({ message: "No user found." });
+        }
+        res.status(200).json(users);
+        
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
+module.exports = { getAll };
