@@ -1,7 +1,9 @@
-import express from "express";
-import mongoose from "mongoose";
-import bodyParser from "body-parser";
-import dotenv from "dotenv";
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const route = require('./routes/userRoute.js');
+//import route from './routes/userRoute.js';
 
 const app = express();
 app.use(bodyParser.json());
@@ -21,3 +23,5 @@ mongoose
     .catch((error) => {
         console.log("Error connecting to MongoDB : ", error.message)
     });
+
+app.use('/api', route);
