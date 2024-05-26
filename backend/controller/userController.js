@@ -21,7 +21,6 @@ const create = async (req, res) => {
     }
 }
 
-module.exports = { create };
 
 
 //get all users
@@ -38,4 +37,7 @@ const getAll = async (req, res) => {
     }
 }
 
-module.exports = { getAll };
+module.exports = 
+{   create,
+    getAll 
+};
