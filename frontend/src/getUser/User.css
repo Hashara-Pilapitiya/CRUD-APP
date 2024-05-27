@@ -1,0 +1,29 @@
+.userTable {
+    width: 70%;
+    margin: 50px auto;
+    background-color: azure;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.65);
+}
+
+.userTable table {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.userTable table th {
+    background-color: rgb(8, 132, 166);
+    color: white;
+    text-align: center;
+}
+
+.userTable table td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.actionButtons button {
+    margin: 0 10px;
+}
