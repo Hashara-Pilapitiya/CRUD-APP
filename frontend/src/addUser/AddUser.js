@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddUser.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import toast from 'react-hot-toast';
 
 const AddUser = () => {
 
@@ -25,9 +25,10 @@ const AddUser = () => {
 
     const submitForm = async(e) => {
         e.preventDefault();
-        await axios.post("http://loacalhost:8000/api/user", user)
+        await axios
+        .post("http://localhost:8000/api/user", user)
         .then((response) => {
-            console.log("User created successfully.");
+            toast.success(response.data.message, {position: 'top-right'});   
             navigate("/");
         })
         .catch((error) => {
@@ -61,7 +62,7 @@ const AddUser = () => {
             </div>
 
             <div className='form-group'>
-                <button type='submit' className='btn btn-primary'>Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
 
         </form>
